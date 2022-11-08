@@ -1,0 +1,31 @@
+<h1 *ngIf="cartItems.length == 0">
+    <p>Cart is Empty!</p>
+</h1>
+
+<div class="cart-container" *ngIf="cartItems.length != 0">
+    <div class="cart-details">
+        <!--<app-cart-item class="cart-item" *ngFor="let product of cartItems" (addToCart)="addToCart($event)"></app-cart-item>  -->
+        <app-cart-item class="cart-item" *ngFor="let product of cartItems" [product]="product"></app-cart-item>
+    </div>
+
+    <div class="payment">
+        <form #paymentForm="ngForm">
+            <label for="fullName">Full Name: </label>
+            <input type="text" required name="fullName" id="fullName" placeholder="Enter Full Name" [ngModel]="fullName" (ngModelChange)="fullName = $event"> <br>
+            <label for="shippingAddress">Address: </label>
+            <input type="text" required name="shippingAddress" id="shippingAddress" placeholder="Enter Shipping Address" [ngModel] (ngModelChange)="shippingAddress= $event"> <br>
+            <p style="margin: 0px;">Total Item: {{ totalItem }}</p>
+            <p style="margin: 0px;">Total Cost: {{ totalCost }}</p>
+            <a routerLink="/confirmation" [queryParams]="{name: fullName, cost: totalCost, address: shippingAddress}">
+                <input type="submit" [disabled]="paymentForm.invalid" value="Confirm Payment">
+            </a>
+        </form>
+    </div>
+
+
+    <div style="margin-top: 20px;">
+        <button (click)="emptyCartItem()">Empty your cart</button>
+    </div>
+</div>
+
+

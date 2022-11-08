@@ -1,0 +1,15 @@
+.product-list-item-container {
+    display: flex;
+    margin: 80px;
+    border: solid;
+}
+
+image {
+    float: left;
+    overflow: hidden;
+}
+
+.details {
+    overflow: hidden;
+    padding: 20px;
+}

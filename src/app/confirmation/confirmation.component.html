@@ -1,0 +1,9 @@
+<div class="confirmation-container">
+    <h1>Successful Purchase!</h1>
+    <p style="margin:0px">Thanks for your purchase, {{ this.order.name }}. You just pay {{ this.order.amount }} AUD.</p><br>
+    <p style="margin:0px">Your Item will be shipped to {{ this.order.address }}, please allow 1-5 business days.</p><br>
+
+    <a routerLink="/">
+        <button class="btn btn-primary" style="margin-right: 10px" type="submit" (click)="backToMainPage()">Back to Product List Page.</button>
+    </a>
+</div>
