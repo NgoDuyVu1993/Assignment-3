@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
   fullName: string = '';
   paymentId: string = '';
   shippingAddress: string = '';
+  
 
   constructor(private cartService: CartService) { }
 
@@ -54,6 +55,14 @@ export class CartComponent implements OnInit {
   }
 
   confirmOrder(): void {
+    const order: Order = {
+      name: this.fullName,
+      address: this.shippingAddress,
+      amount: this.totalCost
+    }
+  }
+
+  onSubmit(): void {
     const order: Order = {
       name: this.fullName,
       address: this.shippingAddress,

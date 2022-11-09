@@ -9,7 +9,7 @@
     </div>
 
     <div class="payment">
-        <form #paymentForm="ngForm">
+        <form #paymentForm="ngForm" (ngSubmit)="onSubmit()">
             <label for="fullName">Full Name: </label>
             <input type="text" name="fullName" id="fullName" placeholder="Enter Full Name" required minlength="5" [ngModel]="fullName" (ngModelChange)="fullName = $event"> <br>
             <label for="shippingAddress">Address: </label>

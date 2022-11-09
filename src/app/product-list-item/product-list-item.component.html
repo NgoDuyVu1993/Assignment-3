@@ -9,6 +9,10 @@
             <input type="number" min="1" name="quantity" placeholder="Enter Quantity" [(ngModel)]="quantity" (ngModelChange)="quantity = $event">
             <input type="submit" [disabled]="form.invalid" value="Add to Cart">
         </form>
+
+        <a routerLink="/detail" [queryParams]="{url: product.url ,name: product.name, cost: product.price, description: product.description }">
+            <input type="submit" value="View Product Details">
+        </a>
     </div>
 </div>
 

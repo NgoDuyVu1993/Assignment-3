@@ -1,0 +1,23 @@
+.product-details-container {
+    display: flex;
+    margin: 80px;
+    border: solid;
+    height: 500px;
+
+}
+
+.title {
+    margin-left: 80px;
+}
+
+image {
+    float: left;
+    overflow: hidden;
+    width: auto;
+
+}
+
+.details {
+    overflow: hidden;
+    padding: 20px;
+}

@@ -1,6 +1,13 @@
-<!-- <div class="product-details-container">
-    <img src="{{ product.url }}" width="200px" height="200px" />
-    <p>{{ product.name }}</p>
-    <p>{{ product.price }}</p>
-    <p>{{ product.description }}</p>
-</div> -->
+<div class="title">
+    <h1>Product Details</h1>
+</div>
+
+<div class="product-details-container">
+    <div class="details">
+        <img src="{{ product.url }}" width="200px" height="200px" />
+        <p><b>Name:</b> {{ product.name }}</p> 
+        <p><b>Price:</b> {{ product.price }}</p> 
+        <p><b>Description:</b> {{ product.description }}</p> 
+        <p>If you buy more than 2. We offer you {{discount}}%.</p>
+    </div>
+</div>
