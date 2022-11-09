@@ -11,9 +11,9 @@
     <div class="payment">
         <form #paymentForm="ngForm">
             <label for="fullName">Full Name: </label>
-            <input type="text" required name="fullName" id="fullName" placeholder="Enter Full Name" [ngModel]="fullName" (ngModelChange)="fullName = $event"> <br>
+            <input type="text" name="fullName" id="fullName" placeholder="Enter Full Name" required minlength="5" [ngModel]="fullName" (ngModelChange)="fullName = $event"> <br>
             <label for="shippingAddress">Address: </label>
-            <input type="text" required name="shippingAddress" id="shippingAddress" placeholder="Enter Shipping Address" [ngModel] (ngModelChange)="shippingAddress= $event"> <br>
+            <input type="text" name="shippingAddress" id="shippingAddress" placeholder="Enter Shipping Address" required minlength="5" [ngModel] (ngModelChange)="shippingAddress= $event"> <br>
             <p style="margin: 0px;">Total Item: {{ totalItem }}</p>
             <p style="margin: 0px;">Total Cost: {{ totalCost }}</p>
             <a routerLink="/confirmation" [queryParams]="{name: fullName, cost: totalCost, address: shippingAddress}">
